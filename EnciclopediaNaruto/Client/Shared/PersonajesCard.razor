@@ -1,0 +1,17 @@
+﻿<div class="card">
+    @if (personaje.images?.Count() != 0)
+    {
+        <img src=@personaje.images.First() class="card-img-top" alt="@personaje.name">
+    } else
+    {
+        <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto Imagen">
+    }
+    <div class="card-body text-center">
+        <p class="card-text mb-1">@personaje.name</p>
+    </div>
+</div>
+@code {
+    [Parameter]
+    [EditorRequired]
+    public Personaje personaje { get; set; }
+}

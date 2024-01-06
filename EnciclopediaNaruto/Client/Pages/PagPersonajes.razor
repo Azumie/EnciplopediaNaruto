@@ -1,0 +1,36 @@
+﻿@page "/Personajes"
+<h3>Personajes</h3>
+@*<div class="row mb-3">
+    <div class="col-md-6">
+        <input @bind:get=@producto @bind:set="funcionMayus" @bind:event="oninput" type="text" class="form-control" placeholder="Buscar productos">
+    </div>
+    <div class="col-md-6">
+        <!-- Tags para seleccionar la categoría del producto -->
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-secondary">Categoría 1</button>
+            <button type="button" class="btn btn-secondary">Categoría 2</button>
+            <button type="button" class="btn btn-secondary">Categoría 3</button>
+        </div>
+        <input type="checkbox" @bind=@variable />
+    </div>
+</div>
+*@
+<!-- Grid de cards para mostrar la lista de productos -->
+<div class="row">
+    <!-- Ejemplo de producto card (repite según la cantidad de productos) -->
+    @if (personajes != null)
+    {
+        @foreach (var personaje in personajes)
+        {
+            <div class="col-md-2 mb-4">
+                <PersonajesCard personaje=@personaje></PersonajesCard>
+            </div>
+        }
+    } else { <h1>Cargando...</h1> }
+
+    <!-- Fin del ejemplo de producto card -->
+    <!-- Puedes repetir el bloque anterior para cada producto en tu lista -->
+</div>
+@code {
+
+}
